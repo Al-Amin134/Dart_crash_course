@@ -1,13 +1,36 @@
-void main() {
-  String name = "Al-Amin";
-  int my_age = 22;
-  bool isGraduate = false;
-  double percentage = 85.5;
-  dynamic name1 = 'babu'; // dynamic er jnno ja kichu type neya jay.
+import 'dart:ffi';
 
-  print(name);
-  print(my_age);
-  print(isGraduate);
-  print(percentage);
-  print(name1);
+void main() {
+  Employee employee = new Employee("Al-Amin",100000);
+  employee.employeeName = "Al-amin";
+  employee.salary = 100000;
+  print(employee.employeeName);
+  print(employee.salary);
+}
+
+class Employee {
+  String employeeName = '';
+  int salary = 0;
+  set Employee1(String employeeName) {
+    this.employeeName = employeeName;
+  }
+//setter
+  set Employee_salary(int salary) {
+    this.salary = salary;
+  }
+//getter
+  get EmployeeName {
+    return employeeName;
+  }
+
+//constructor
+  Employee(String employeeName, int salary) {
+    this.employeeName = employeeName;
+    this.salary = salary;
+    print('Here is the employeeName :' + employeeName);
+    print('${employeeName} salary is ${salary}');
+  }
+  get Salary {
+    return salary;
+  }
 }
